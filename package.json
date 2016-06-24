@@ -1,0 +1,28 @@
+{
+  "name": "x-path",
+  "version": "1.0.0",
+  "description": "Personal panel",
+  "main": "app.js",
+  "scripts": {
+    "webpack": "webpack",
+    "start": "webpack-dev-server --content-base app",
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/KomendaP/x-path-personal-panel.git"
+  },
+  "author": "Pavlo Komenda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KomendaP/x-path-personal-panel/issues"
+  },
+  "homepage": "https://github.com/KomendaP/x-path-personal-panel#readme",
+  "devDependencies": {
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "angular": "^1.5.7"
+  }
+}
