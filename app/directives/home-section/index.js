@@ -2,7 +2,7 @@ export default ngModule => {
 
   //test
   if (ON_TEST) {
-    require('./index.test')(ngModule);
+    require('./index.test.js')(ngModule);
   }
 
 
@@ -16,6 +16,13 @@ export default ngModule => {
         'We listen.',
         'We discuss.',
         'We develop.'
+      ];
+      this.mainMenu = [
+        {title: 'Home', link: '#home', active: true},
+        {title: 'About', link: '#about', active: false},
+        {title: 'Projects', link: '#project', active: false},
+        {title: 'News', link: '#news', active: false},
+        {title: 'Contact', link: '#contact', active: false}
       ]
     };
     

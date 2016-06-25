@@ -13,12 +13,7 @@
                     <div class="col-md-8">
                         <div class="navmenu"style="text-align: center;">
                             <ul id="menu">
-                                <li class="active" ><a href="#home">Home</a></li>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#project">Projects</a></li>
-                                <li><a href="#news">News</a></li>
-                                <li class="last"><a href="#contact">Contact</a></li>
-                                <!--li><a href="#features">Features</a></li-->
+                                <li ng-class="{{item.active}}" ng-repeat="item in home.mainMenu"><a href="{{item.link}}">{{item.title}}</a></li>
                             </ul>
                         </div>
                     </div>

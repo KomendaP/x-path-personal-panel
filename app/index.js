@@ -1,12 +1,13 @@
 const angular = require('angular');
 
 // tests
-if (ON_TEST) {
-  require('angular-mocks/angular-mocks');
+if (NODE_ENV === 'test'){
+  console.log('test');
+  // require('angular-mocks/angular-mocks');
 }
 
 const ngModule = angular.module('app', []);
 
-import directives from './js/directives';
+import directives from './directives';
 
 directives(ngModule);
