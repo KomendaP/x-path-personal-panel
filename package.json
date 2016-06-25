@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "webpack": "webpack",
-    "start": "webpack-dev-server --content-base prod",
+    "start": "webpack-dev-server",
+    "speed-test": "webpack --profile --display-modules --display-reasons",
     "test": "karma start"
   },
   "repository": {

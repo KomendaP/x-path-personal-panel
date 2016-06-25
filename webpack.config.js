@@ -5,7 +5,11 @@ module.exports = {
   context: path.resolve(__dirname, 'app'),
   
   entry: {
-    bundle: './index.js'
+    bundle: [
+      "webpack-dev-server/client?http://localhost:8080/",
+      "webpack/hot/dev-server",
+      './index.js'
+    ]
   },
   
   output: {
@@ -42,12 +46,13 @@ module.exports = {
           'sass'
         ]
       }
-    ]
+    ],
+    noParse: /node_modules\/angular\/angular.js/
   },
   
   plugins: [
     new webpack.NoErrorsPlugin(), // prevents file creation on errors of compilation
-
+    new webpack.HotModuleReplacementPlugin(),
     // env vars (own plugins for test)
     new webpack.DefinePlugin({
       ON_TEST: process.env.NODE_ENV === 'test'
@@ -55,7 +60,14 @@ module.exports = {
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify('test')
     })
-  ]
+  ],
+
+  devServer: {
+    host: 'localhost',
+    port: 8080,
+    contentBase: path.resolve(__dirname, 'prod'),
+    hot: true // hot replacement
+  }
 };
 
 /*
