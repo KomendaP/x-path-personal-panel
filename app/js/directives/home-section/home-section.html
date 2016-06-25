@@ -27,22 +27,11 @@
         </div>
         <div class="container">
             <div class="row wrap">
-                <h1 style="color: #fff; font-size: 10rem">{{home.entity}}</h1>
                 <div class="col-md-12 gallery">
                     <div class="camera_wrap camera_white_skin" id="camera_wrap_1">
-                        <div data-thumb="" data-src="images/slides/blank.gif">
+                        <div data-thumb="" data-src="images/slides/blank.gif" ng-repeat="slide in home.entity">
                             <div class="img-responsive camera_caption fadeFromBottom">
-                                <h2>We listen.</h2>
-                            </div>
-                        </div>
-                        <div data-thumb="" data-src="images/slides/blank.gif">
-                            <div class="img-responsive camera_caption fadeFromBottom">
-                                <h2>We discuss.</h2>
-                            </div>
-                        </div>
-                        <div data-thumb="" data-src="images/slides/blank.gif">
-                            <div class="img-responsive camera_caption fadeFromBottom">
-                                <h2>We develop.</h2>
+                                <h2>{{slide}}</h2>
                             </div>
                         </div>
                     </div><!-- #camera_wrap_1 -->

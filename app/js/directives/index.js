@@ -1,3 +1,5 @@
-module.exports = function (ngModule) {
-  require('./home-section')(ngModule);
+import home from './home-section';
+
+export default ngModule => {
+  home(ngModule);
 };

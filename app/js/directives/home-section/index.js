@@ -1,14 +1,30 @@
-module.exports = function (ngModule) {
-  ngModule.directive('homeSection', function () {
-    var ctrl = function () {
-      this.entity = 'Personal panel'
+export default ngModule => {
+
+  //test
+  if (ON_TEST) {
+    require('./index.test')(ngModule);
+  }
+
+
+  ngModule.directive('homeSection', () => {
+    // styles
+    require('./home-section.scss');
+    
+    // controller
+    let ctrl = function () {
+      this.entity = [
+        'We listen.',
+        'We discuss.',
+        'We develop.'
+      ]
     };
+    
     return {
       restrict: 'E',
-      templateUrl: './js/directives/home-section/home-section.html',
+      template: require('./home-section.html'),
       scope: {},
       controller: ctrl,
       controllerAs: 'home'
     }
   })
-}
+};
