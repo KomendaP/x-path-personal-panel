@@ -2,10 +2,10 @@
 // Generated on Sat Jun 25 2016 15:07:18 GMT+0300 (Фінляндія (літо))
 var path = require('path');
 var webpackConfig = require('./webpack.config');
-var entry = path.resolve(webpackConfig.context, webpackConfig.entry);
+var entry = path.resolve(webpackConfig.context, webpackConfig.entry.bundle[webpackConfig.entry.bundle.length - 1]);
 var preprocessors = {};
 preprocessors[entry] = ['webpack'];
-
+console.error(entry);
 module.exports = function(config) {
   config.set({
 

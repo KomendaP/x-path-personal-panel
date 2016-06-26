@@ -7,7 +7,7 @@
     "webpack": "webpack",
     "start": "webpack-dev-server",
     "speed-test": "webpack --profile --display-modules --display-reasons",
-    "test": "karma start"
+    "test": "node ./node_modules/karma/bin/karma start"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,15 @@
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
+    "chai": "^3.5.0",
     "css-loader": "^0.23.1",
+    "karma": "^1.0.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-mocha": "^1.0.1",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.5.3",
     "node-sass": "^3.8.0",
     "raw-loader": "^0.5.1",
     "sass-loader": "^3.2.1",
