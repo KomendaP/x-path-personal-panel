@@ -1,4 +1,4 @@
-var bundle =
+var index =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	var parentHotUpdateCallback = this["webpackHotUpdate_name_"];
 /******/ 	this["webpackHotUpdate_name_"] = 
@@ -66,7 +66,7 @@ var bundle =
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "20ea642b0a8fedaa1b26"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "82c55ebe18dfe551c52c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -8169,23 +8169,28 @@ var bundle =
 
 	'use strict';
 	
-	var _directives = __webpack_require__(77);
+	var _controllers = __webpack_require__(77);
+	
+	var _controllers2 = _interopRequireDefault(_controllers);
+	
+	var _directives = __webpack_require__(80);
 	
 	var _directives2 = _interopRequireDefault(_directives);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var angular = __webpack_require__(92);
+	var angular = __webpack_require__(83);
 	
 	// tests
 	if (true) {
 	  console.log('test');
-	  // require('angular-mocks/angular-mocks');
 	}
+	// import services from './services';
 	
-	var ngModule = angular.module('app', []);
 	
-	(0, _directives2.default)(ngModule);
+	(0, _controllers2.default)(angular.module('app', []));
+	// services(angular.module('app', []));
+	(0, _directives2.default)(angular.module('app', []));
 
 /***/ },
 /* 77 */
@@ -8197,29 +8202,26 @@ var bundle =
 	  value: true
 	});
 	
-	var _homeSection = __webpack_require__(78);
+	var _MainCtrl = __webpack_require__(78);
 	
-	var _homeSection2 = _interopRequireDefault(_homeSection);
+	var _MainCtrl2 = _interopRequireDefault(_MainCtrl);
 	
-	var _aboutSection = __webpack_require__(84);
+	var _HomeCtrl = __webpack_require__(79);
 	
-	var _aboutSection2 = _interopRequireDefault(_aboutSection);
-	
-	var _projectSection = __webpack_require__(88);
-	
-	var _projectSection2 = _interopRequireDefault(_projectSection);
+	var _HomeCtrl2 = _interopRequireDefault(_HomeCtrl);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = function (ngModule) {
-	  (0, _homeSection2.default)(ngModule);
-	  (0, _aboutSection2.default)(ngModule);
-	  (0, _projectSection2.default)(ngModule);
+	  "use strict";
+	
+	  (0, _MainCtrl2.default)(ngModule);
+	  (0, _HomeCtrl2.default)(ngModule);
 	};
 
 /***/ },
 /* 78 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	'use strict';
 	
@@ -8228,556 +8230,159 @@ var bundle =
 	});
 	
 	exports.default = function (ngModule) {
+	  "use strict";
 	
-	  //test
-	  if (false) {
-	    require('./index.test.js')(ngModule);
-	  }
-	
-	  ngModule.directive('homeSection', function () {
-	    // styles
-	    __webpack_require__(79);
-	
-	    // controller
-	    var ctrl = function ctrl() {
-	      this.entity = ['We listen.', 'We discuss.', 'We develop.'];
-	      this.mainMenu = [{ title: 'Home', link: '#home', active: true }, { title: 'About', link: '#about', active: false }, { title: 'Projects', link: '#project', active: false }, { title: 'News', link: '#news', active: false }, { title: 'Contact', link: '#contact', active: false }];
-	    };
-	
-	    return {
-	      restrict: 'E',
-	      template: __webpack_require__(83),
-	      scope: {},
-	      controller: ctrl,
-	      controllerAs: 'home'
-	    };
+	  ngModule.controller('MainCtrl', function () {
+	    this.title = 'title';
 	  });
 	};
 
 /***/ },
 /* 79 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
+	"use strict";
 	
-	// load the styles
-	var content = __webpack_require__(80);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(82)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept(80, function() {
-				var newContent = __webpack_require__(80);
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports.default = function (ngModule) {
+	  "use strict";
+	
+	  ngModule.controller('HomeCtrl', function () {});
+	};
 
 /***/ },
 /* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(81)();
-	// imports
+	'use strict';
 	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	
-	// module
-	exports.push([module.id, "#home {\n  opacity: 0.2; }\n", ""]);
+	var _mainMenu = __webpack_require__(81);
 	
-	// exports
-
+	var _mainMenu2 = _interopRequireDefault(_mainMenu);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (ngModule) {
+	  "use strict";
+	
+	  ngModule.directive('mainMenu', function () {
+	    var _this = this;
+	
+	    var ctrl = function ctrl() {
+	      _this.menuItems = [{
+	        link: 'home',
+	        title: 'Home',
+	        active: false
+	      }, {
+	        link: 'about',
+	        title: 'About',
+	        active: false
+	      }, {
+	        link: 'project',
+	        title: 'Projects',
+	        active: false
+	      }, {
+	        link: 'news',
+	        title: 'News',
+	        active: false
+	      }, {
+	        link: 'contact',
+	        title: 'Contact',
+	        active: false
+	      }];
+	    };
+	
+	    return {
+	      restrict: 'E',
+	      scope: {},
+	      template: '<h1>haha</h1>',
+	      controller: ctrl,
+	      controllerAs: 'menu'
+	    };
+	  });
+	};
 
 /***/ },
 /* 81 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
+	'use strict';
 	
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
+	var _mainMenu = __webpack_require__(82);
+	
+	var _mainMenu2 = _interopRequireDefault(_mainMenu);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// import styles from './mainMenu.scss';
+	
+	exports.default = function (ngModule) {
+	  "use strict";
+	
+	  ngModule.directive('mainMenu', function () {
+	    var _this = this;
+	
+	    var ctrl = function ctrl() {
+	      _this.menuItems = [{
+	        link: 'home',
+	        title: 'Home',
+	        active: false
+	      }, {
+	        link: 'about',
+	        title: 'About',
+	        active: false
+	      }, {
+	        link: 'project',
+	        title: 'Projects',
+	        active: false
+	      }, {
+	        link: 'news',
+	        title: 'News',
+	        active: false
+	      }, {
+	        link: 'contact',
+	        title: 'Contact',
+	        active: false
+	      }];
+	    };
+	
+	    return {
+	      restrict: 'E',
+	      scope: {},
+	      template: _mainMenu2.default,
+	      controller: ctrl,
+	      controllerAs: 'menu'
+	    };
+	  });
 	};
-
 
 /***/ },
 /* 82 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	var stylesInDom = {},
-		memoize = function(fn) {
-			var memo;
-			return function () {
-				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-				return memo;
-			};
-		},
-		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
-		}),
-		getHeadElement = memoize(function () {
-			return document.head || document.getElementsByTagName("head")[0];
-		}),
-		singletonElement = null,
-		singletonCounter = 0,
-		styleElementsInsertedAtTop = [];
-	
-	module.exports = function(list, options) {
-		if(false) {
-			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-		}
-	
-		options = options || {};
-		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-		// tags it will allow on a page
-		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-	
-		// By default, add <style> tags to the bottom of <head>.
-		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-	
-		var styles = listToStyles(list);
-		addStylesToDom(styles, options);
-	
-		return function update(newList) {
-			var mayRemove = [];
-			for(var i = 0; i < styles.length; i++) {
-				var item = styles[i];
-				var domStyle = stylesInDom[item.id];
-				domStyle.refs--;
-				mayRemove.push(domStyle);
-			}
-			if(newList) {
-				var newStyles = listToStyles(newList);
-				addStylesToDom(newStyles, options);
-			}
-			for(var i = 0; i < mayRemove.length; i++) {
-				var domStyle = mayRemove[i];
-				if(domStyle.refs === 0) {
-					for(var j = 0; j < domStyle.parts.length; j++)
-						domStyle.parts[j]();
-					delete stylesInDom[domStyle.id];
-				}
-			}
-		};
-	}
-	
-	function addStylesToDom(styles, options) {
-		for(var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-			if(domStyle) {
-				domStyle.refs++;
-				for(var j = 0; j < domStyle.parts.length; j++) {
-					domStyle.parts[j](item.parts[j]);
-				}
-				for(; j < item.parts.length; j++) {
-					domStyle.parts.push(addStyle(item.parts[j], options));
-				}
-			} else {
-				var parts = [];
-				for(var j = 0; j < item.parts.length; j++) {
-					parts.push(addStyle(item.parts[j], options));
-				}
-				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-			}
-		}
-	}
-	
-	function listToStyles(list) {
-		var styles = [];
-		var newStyles = {};
-		for(var i = 0; i < list.length; i++) {
-			var item = list[i];
-			var id = item[0];
-			var css = item[1];
-			var media = item[2];
-			var sourceMap = item[3];
-			var part = {css: css, media: media, sourceMap: sourceMap};
-			if(!newStyles[id])
-				styles.push(newStyles[id] = {id: id, parts: [part]});
-			else
-				newStyles[id].parts.push(part);
-		}
-		return styles;
-	}
-	
-	function insertStyleElement(options, styleElement) {
-		var head = getHeadElement();
-		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
-		if (options.insertAt === "top") {
-			if(!lastStyleElementInsertedAtTop) {
-				head.insertBefore(styleElement, head.firstChild);
-			} else if(lastStyleElementInsertedAtTop.nextSibling) {
-				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
-			} else {
-				head.appendChild(styleElement);
-			}
-			styleElementsInsertedAtTop.push(styleElement);
-		} else if (options.insertAt === "bottom") {
-			head.appendChild(styleElement);
-		} else {
-			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
-		}
-	}
-	
-	function removeStyleElement(styleElement) {
-		styleElement.parentNode.removeChild(styleElement);
-		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
-		if(idx >= 0) {
-			styleElementsInsertedAtTop.splice(idx, 1);
-		}
-	}
-	
-	function createStyleElement(options) {
-		var styleElement = document.createElement("style");
-		styleElement.type = "text/css";
-		insertStyleElement(options, styleElement);
-		return styleElement;
-	}
-	
-	function createLinkElement(options) {
-		var linkElement = document.createElement("link");
-		linkElement.rel = "stylesheet";
-		insertStyleElement(options, linkElement);
-		return linkElement;
-	}
-	
-	function addStyle(obj, options) {
-		var styleElement, update, remove;
-	
-		if (options.singleton) {
-			var styleIndex = singletonCounter++;
-			styleElement = singletonElement || (singletonElement = createStyleElement(options));
-			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
-			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
-		} else if(obj.sourceMap &&
-			typeof URL === "function" &&
-			typeof URL.createObjectURL === "function" &&
-			typeof URL.revokeObjectURL === "function" &&
-			typeof Blob === "function" &&
-			typeof btoa === "function") {
-			styleElement = createLinkElement(options);
-			update = updateLink.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-				if(styleElement.href)
-					URL.revokeObjectURL(styleElement.href);
-			};
-		} else {
-			styleElement = createStyleElement(options);
-			update = applyToTag.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-			};
-		}
-	
-		update(obj);
-	
-		return function updateStyle(newObj) {
-			if(newObj) {
-				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
-					return;
-				update(obj = newObj);
-			} else {
-				remove();
-			}
-		};
-	}
-	
-	var replaceText = (function () {
-		var textStore = [];
-	
-		return function (index, replacement) {
-			textStore[index] = replacement;
-			return textStore.filter(Boolean).join('\n');
-		};
-	})();
-	
-	function applyToSingletonTag(styleElement, index, remove, obj) {
-		var css = remove ? "" : obj.css;
-	
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = replaceText(index, css);
-		} else {
-			var cssNode = document.createTextNode(css);
-			var childNodes = styleElement.childNodes;
-			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
-			if (childNodes.length) {
-				styleElement.insertBefore(cssNode, childNodes[index]);
-			} else {
-				styleElement.appendChild(cssNode);
-			}
-		}
-	}
-	
-	function applyToTag(styleElement, obj) {
-		var css = obj.css;
-		var media = obj.media;
-	
-		if(media) {
-			styleElement.setAttribute("media", media)
-		}
-	
-		if(styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = css;
-		} else {
-			while(styleElement.firstChild) {
-				styleElement.removeChild(styleElement.firstChild);
-			}
-			styleElement.appendChild(document.createTextNode(css));
-		}
-	}
-	
-	function updateLink(linkElement, obj) {
-		var css = obj.css;
-		var sourceMap = obj.sourceMap;
-	
-		if(sourceMap) {
-			// http://stackoverflow.com/a/26603875
-			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-		}
-	
-		var blob = new Blob([css], { type: "text/css" });
-	
-		var oldSrc = linkElement.href;
-	
-		linkElement.href = URL.createObjectURL(blob);
-	
-		if(oldSrc)
-			URL.revokeObjectURL(oldSrc);
-	}
-
+	module.exports = "<div class=\"navmenu\" ng-repeat=\"item in menu.menuItems\" style=\"text-align: center;\">\r\n\t<ul id=\"menu\">\r\n\t\t<li ng-class=\"{active: item.active}\" ><a href=\"#{{item.link}}\">{{item.title}}</a></li>\r\n\t</ul>\r\n</div>"
 
 /***/ },
 /* 83 */
-/***/ function(module, exports) {
-
-	module.exports = "<div id=\"home\">\r\n    <div class=\"headerLine\">\r\n        <div id=\"menuF\" class=\"default\">\r\n            <div class=\"container\">\r\n                <div class=\"row\">\r\n                    <div class=\"logo col-md-4\">\r\n                        <div>\r\n                            <a href=\"#\">\r\n                                <img src=\"images/logo.png\">\r\n                            </a>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"col-md-8\">\r\n                        <div class=\"navmenu\"style=\"text-align: center;\">\r\n                            <ul id=\"menu\">\r\n                                <li ng-class=\"{{item.active}}\" ng-repeat=\"item in home.mainMenu\"><a href=\"{{item.link}}\">{{item.title}}</a></li>\r\n                            </ul>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"container\">\r\n            <div class=\"row wrap\">\r\n                <div class=\"col-md-12 gallery\">\r\n                    <div class=\"camera_wrap camera_white_skin\" id=\"camera_wrap_1\">\r\n                        <div data-thumb=\"\" data-src=\"images/slides/blank.gif\" ng-repeat=\"slide in home.entity\">\r\n                            <div class=\"img-responsive camera_caption fadeFromBottom\">\r\n                                <h2>{{slide}}</h2>\r\n                            </div>\r\n                        </div>\r\n                    </div><!-- #camera_wrap_1 -->\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-4 project\">\r\n                <h3 id=\"counter\">0</h3>\r\n                <h4>Awesome Projects</h4>\r\n                <p>Dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et lorem a laoreet phasellus ut nisi id leo molestie. </p>\r\n            </div>\r\n            <div class=\"col-md-4 project\">\r\n                <h3 id=\"counter1\">0</h3>\r\n                <h4>Happy Customers</h4>\r\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et. laoreet phasellus ut nisi id leo.  </p>\r\n            </div>\r\n            <div class=\"col-md-4 project\">\r\n                <h3 id=\"counter2\" style=\"margin-left: 20px;\">0</h3>\r\n                <h4 style=\"margin-left: 20px;\">Professional Awards</h4>\r\n                <p>Consectetur adipiscing elit quisque tempus eget diam et laoreet phasellus ut nisi id leo molestie adipiscing vitae a vel. </p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12 cBusiness\">\r\n                <h3>The Best Way to Create Business Site &ndash; Attractive One Page</h3>\r\n                <h4>Discover elegant solution for your online business fast, reliable, affordable.</h4>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12 centPic\">\r\n                <img class=\"img-responsive\"  src=\"images/bizPic.png\"/>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
-
-/***/ },
-/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	exports.default = function (ngModule) {
-	
-	  //test
-	  if (false) {
-	    require('./index.test.js')(ngModule);
-	  }
-	
-	  ngModule.directive('aboutSection', function () {
-	    // styles
-	    __webpack_require__(85);
-	
-	    // controller
-	    var ctrl = function ctrl() {};
-	
-	    return {
-	      restrict: 'E',
-	      template: __webpack_require__(87),
-	      scope: {},
-	      controller: ctrl,
-	      controllerAs: 'about'
-	    };
-	  });
-	};
-
-/***/ },
-/* 85 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(86);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(82)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept(86, function() {
-				var newContent = __webpack_require__(86);
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 86 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(81)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "#about {\n  opacity: 0.5; }\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 87 */
-/***/ function(module, exports) {
-
-	module.exports = "<div id=\"about\">\r\n    <div class=\"line2\">\r\n        <div class=\"container\">\r\n            <div class=\"row Fresh\">\r\n                <div class=\"col-md-4 Des\">\r\n                    <i class=\"fa fa-heart\"></i>\r\n                    <h4>Fresh & Clean Design</h4>\r\n                    <p>Nulla consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor. feugiat </p>\r\n                </div>\r\n                <div class=\"col-md-4 Ver\">\r\n                    <i class=\"fa fa-cog\"></i>\r\n                    <h4>Very Flexible</h4>\r\n                    <p>Nulla consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor. feugiat </p>\r\n                </div>\r\n                <div class=\"col-md-4 Fully\">\r\n                    <i class=\"fa fa-tablet\"></i>\r\n                    <h4>Fully Responsive</h4>\r\n                    <p>Nulla consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor. feugiat </p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12 wwa\">\r\n                <span name=\"about\" ></span>\r\n                <h3>Who We Are? Meet Our Team!</h3>\r\n                <h4>We listen, we discuss, we advise and develop. We love to learn and use the latest technologies.</h4>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"container\">\r\n        <div class=\"row team\">\r\n            <div class=\"col-md-4 b1\">\r\n                <img class=\"img-responsive\" src=\"images/picTeam/picT1.png\">\r\n                <h4>Tom Simpson</h4>\r\n                <h5>CEO</h5>\r\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit <br/>quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget.</p>\r\n                <ul>\r\n                    <li><a href=\"#\"><i class=\"fa fa-facebook-square\"></i></a></li>\r\n                    <li><a href=\"#\"><i class=\"fa fa-pinterest\"></i></a></li>\r\n                    <li><a href=\"#\"><i class=\"fa fa-twitter\" ></i></a></li>\r\n                    <li><a href=\"#\"><i class=\"fa fa-google-plus-square\"></i></a></li>\r\n                </ul>\r\n            </div>\r\n\r\n\r\n            <div class=\"col-md-4\">\r\n                <img class=\"img-responsive\" src=\"images/picTeam/picT2.png\">\r\n                <h4>John Doe</h4>\r\n                <h5>Project Manager</h5>\r\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit<br/> quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget.</p>\r\n                <ul>\r\n                    <li><a href=\"#\"><i class=\"fa fa-facebook-square\"></i></a></li>\r\n                    <li><a href=\"#\"><i class=\"fa fa-pinterest\"></i></a></li>\r\n                    <li><a href=\"#\"><i class=\"fa fa-twitter\" ></i></a></li>\r\n                    <li><a href=\"#\"><i class=\"fa fa-google-plus-square\"></i></a></li>\r\n                </ul>\r\n            </div>\r\n\r\n\r\n            <div class=\"col-md-4 b3\">\r\n                <img class=\"img-responsive\" src=\"images/picTeam/picT3.png\">\r\n                <h4>Anna White</h4>\r\n                <h5>Developer</h5>\r\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit<br/> quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget.</p>\r\n                <ul>\r\n                    <li><a href=\"#\"><i class=\"fa fa-facebook-square\"></i></a></li>\r\n                    <li><a href=\"#\"><i class=\"fa fa-pinterest\"></i></a></li>\r\n                    <li><a href=\"#\"><i class=\"fa fa-twitter\" ></i></a></li>\r\n                    <li><a href=\"#\"><i class=\"fa fa-google-plus-square\"></i></a></li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12 hr1\">\r\n                <hr/>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-3 bar\">\r\n                <div class=\"progB chart\" data-percent=\"64\"  data-animate=\"3500\">\r\n                    <div class=\"chart chart-content\">\r\n                        <div class=\"percentage\" data-percent=\"64\">\r\n                            <span class=\"percent\">64</span>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"textP\">\r\n                    <h3>WordPress</h3>\r\n                    <p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-md-3 bar\">\r\n                <div class=\"progB chart\" data-percent=\"22\"  data-animate=\"3500\">\r\n                    <div class=\"chart chart-content\">\r\n                        <div class=\"percentage\" data-percent=\"22\">\r\n                            <span class=\"percent\">22</span>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"textP\">\r\n                    <h3>HTML5</h3>\r\n                    <p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-md-3 bar \">\r\n                <div class=\"progB chart\" data-percent=\"84\"  data-animate=\"3500\">\r\n                    <div class=\"chart chart-content\">\r\n                        <div class=\"percentage\" data-percent=\"22\">\r\n                            <span class=\"percent\">84</span>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"textP\">\r\n                    <h3>CSS3</h3>\r\n                    <p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-md-3 bar \">\r\n                <div class=\"progB chart\" data-percent=\"45\"  data-animate=\"3500\">\r\n                    <div class=\"chart chart-content\">\r\n                        <div class=\"percentage\" data-percent=\"45\">\r\n                            <span class=\"percent\">45</span>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"textP\">\r\n                    <h3>Woocommerce</h3>\r\n                    <p>Nulla consectetur ornare nibh, a auctor <br/>mauris scelerisque eu proin nec urna quis. </p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"container\">\r\n        <div class=\"row aboutUs\">\r\n            <div class=\"col-md-12 \">\r\n                <h3>What Our Customers Say About Us?</h3>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <div style=\"position: relative;\">\r\n\r\n        <div class=\"container\">\r\n            <div class=\"row about\">\r\n                <div class=\"col-md-6\">\r\n                    <div class=\"about1\">\r\n                        <img class=\"pic1Ab\" src=\"images/picAbout/aboutP1.png\">\r\n                        <h3>Anna Smith, Company Inc.</h3>\r\n                        <p>Nulla consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor feugiat fermentum quisque eget pharetra, felis et venenatis. aliquam, nulla nisi lobortis elit ac.</p>\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <div class=\"about2\">\r\n                        <img class=\"pic2Ab\" src=\"images/picAbout/aboutP2.png\">\r\n                        <h3>John Doe, Company Inc.</h3>\r\n                        <p>Consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo, adipiscing auctor, ut auctor feugiat fermentum nec quisque eget pharetra, felis et venenatis aliquam, nulla nisi lobortis elit, ac luctus.</p>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"horL\"></div>\r\n\r\n        <div class=\"container\">\r\n            <div class=\"row about\">\r\n                <div class=\"col-md-6\">\r\n                    <div class=\"about1\">\r\n                        <img class=\"pic1Ab\" src=\"images/picAbout/aboutP3.png\">\r\n                        <h3>Tom Sawyer, Company Inc.</h3>\r\n                        <p>A auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor feugiat fermentum quisque eget pharetra, felis et venenatis aliquam, nulla nisi lobortis elit, acnterdum ante feugiat vitae.</p>\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-md-6\">\r\n                    <div class=\"about2\">\r\n                        <img class=\"pic2Ab\" src=\"images/picAbout/aboutP4.png\">\r\n                        <h3>Sarah White, Company Inc.</h3>\r\n                        <p>Ornare nibh a auctor, mauris scelerisque eu proin nec urna nec a quis justo adipiscing auctor ut auctor feugiat fermentum quisque eget pharetra felis et venenatis aliquam, nulla nisi lobortis elit, ac eleifend nisl ante nec lorem. </p>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div>"
-
-/***/ },
-/* 88 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	exports.default = function (ngModule) {
-	
-	  //test
-	  if (false) {
-	    require('./index.test.js')(ngModule);
-	  }
-	
-	  ngModule.directive('projectSection', function () {
-	    // styles
-	    __webpack_require__(89);
-	
-	    // controller
-	    var ctrl = function ctrl() {};
-	
-	    return {
-	      restrict: 'E',
-	      template: __webpack_require__(91),
-	      scope: {},
-	      controller: ctrl,
-	      controllerAs: 'proj'
-	    };
-	  });
-	};
-
-/***/ },
-/* 89 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(90);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(82)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept(90, function() {
-				var newContent = __webpack_require__(90);
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 90 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(81)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "#about {\n  opacity: 0.5; }\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 91 */
-/***/ function(module, exports) {
-
-	module.exports = "<div id=\"project\">\r\n    <div class=\"line3\">\r\n        <div class=\"container\">\r\n            <div id=\"project1\" ></div>\r\n            <div class=\"row Ama\">\r\n                <div class=\"col-md-12\">\r\n                    <span name=\"projects\" id=\"projectss\"></span>\r\n                    <h3>Our Amazing Works</h3>\r\n                    <p>Right here we've got something you gonna love</p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"container\">\r\n\r\n        <div class=\"row\">\r\n            <!-- filter_block -->\r\n            <div id=\"options\" class=\"col-md-12\" style=\"text-align: center;\">\r\n                <ul id=\"filter\" class=\"option-set\" data-option-key=\"filter\">\r\n                    <li><a class=\"selected\" href=\"#filter\" data-option-value=\"*\" class=\"current\">All Works</a></li>\r\n                    <li><a href=\"#filter\" data-option-value=\".polygraphy\">Polygraphy</a></li>\r\n                    <li><a href=\"#filter\" data-option-value=\".branding\">Branding</a></li>\r\n                    <li><a href=\"#filter\" data-option-value=\".web\">Web UI</a></li>\r\n                    <li><a href=\"#filter\" data-option-value=\".text_styles\">Text Styles</a></li>\r\n                </ul>\r\n            </div><!-- //filter_block -->\r\n\r\n\r\n\r\n            <div class=\"portfolio_block columns3   pretty\" data-animated=\"fadeIn\">\r\n                <div class=\"element col-sm-4   gall branding\">\r\n                    <a class=\"plS\" href=\"images/prettyPhotoImages/pic1.jpg\" rel=\"prettyPhoto[gallery2]\">\r\n                        <img class=\"img-responsive picsGall\" src=\"images/prettyPhotoImages/thumb_pic1.jpg\" alt=\"pic1 Gallery\"/>\r\n                    </a>\r\n                    <div class=\"view project_descr \">\r\n                        <h3><a href=\"#\">Recycled Paper - Business Card Mock Up</a></h3>\r\n                        <ul>\r\n                            <li><i class=\"fa fa-eye\"></i>215</li>\r\n                            <li><a class=\"heart\" href=\"#\"><i class=\"fa-heart-o\"></i>14</a></li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n                <div class=\"element col-sm-4  gall branding\">\r\n                    <a class=\"plS\" href=\"images/prettyPhotoImages/pic2.jpg\" rel=\"prettyPhoto[gallery2]\">\r\n                        <img class=\"img-responsive picsGall\" src=\"images/prettyPhotoImages/thumb_pic2.jpg\" alt=\"pic2 Gallery\"/>\r\n                    </a>\r\n                    <div class=\"view project_descr center\">\r\n                        <h3><a href=\"#\">Environment Logos Set</a></h3>\r\n                        <ul>\r\n                            <li><i class=\"fa fa-eye\"></i>369</li>\r\n                            <li><a  class=\"heart\" href=\"#\"><i class=\"fa-heart-o\"></i>86</a></li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n                <div class=\"element col-sm-4  gall web\">\r\n                    <a class=\"plS\" href=\"images/prettyPhotoImages/pic3.jpg\" rel=\"prettyPhoto[gallery2]\">\r\n                        <img class=\"img-responsive picsGall\" src=\"images/prettyPhotoImages/thumb_pic3.jpg\" alt=\"pic3 Gallery\"/>\r\n                    </a>\r\n                    <div class=\"view project_descr \">\r\n                        <h3><a href=\"#\">Beag Simple WEB UI</a></h3>\r\n                        <ul>\r\n                            <li><i class=\"fa fa-eye\"></i>400</li>\r\n                            <li><a  class=\"heart\" href=\"#\"><i class=\"fa-heart-o\"></i>124</a></li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n                <div class=\"element col-sm-4  gall  text_styles\">\r\n                    <a class=\"plS\" href=\"images/prettyPhotoImages/pic4.jpg\" rel=\"prettyPhoto[gallery2]\">\r\n                        <img class=\"img-responsive picsGall\" src=\"images/prettyPhotoImages/thumb_pic4.jpg\" alt=\"pic1 Gallery\"/>\r\n                    </a>\r\n                    <div class=\"view project_descr \">\r\n                        <h3><a href=\"#\">Pop Candy Text Effect</a></h3>\r\n                        <ul>\r\n                            <li><i class=\"fa fa-eye\"></i>480</li>\r\n                            <li><a  class=\"heart\" href=\"#\"><i class=\"fa-heart-o\"></i>95</a></li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n                <div class=\"element col-sm-4  gall  web\">\r\n                    <a class=\"plS\" href=\"images/prettyPhotoImages/pic5.jpg\" rel=\"prettyPhoto[gallery2]\">\r\n                        <img class=\"img-responsive picsGall\" src=\"images/prettyPhotoImages/thumb_pic5.jpg\" alt=\"pic1 Gallery\"/>\r\n                    </a>\r\n                    <div class=\"view project_descr center\">\r\n                        <h3><a href=\"#\">User Interface Elements</a></h3>\r\n                        <ul>\r\n                            <li><i class=\"fa fa-eye\"></i>215</li>\r\n                            <li><a  class=\"heart\" href=\"#\"><i class=\"fa-heart-o\"></i>14</a></li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n                <div class=\"element col-sm-4  gall  polygraphy\">\r\n                    <a class=\"plS\" href=\"images/prettyPhotoImages/pic6.jpg\" rel=\"prettyPhoto[gallery2]\">\r\n                        <img class=\"img-responsive picsGall\" src=\"images/prettyPhotoImages/thumb_pic6.jpg\" alt=\"pic1 Gallery\"/>\r\n                    </a>\r\n                    <div class=\"view project_descr \">\r\n                        <h3><a href=\"#\">Stationery Branding Mock Up</a></h3>\r\n                        <ul>\r\n                            <li><i class=\"fa fa-eye\"></i>375</li>\r\n                            <li><a  class=\"heart\" href=\"#\"><i class=\"fa-heart-o\"></i>102</a></li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n                <div class=\"element col-sm-4   gall branding\">\r\n                    <a class=\"plS\" href=\"images/prettyPhotoImages/pic7.jpg\" rel=\"prettyPhoto[gallery2]\">\r\n                        <img class=\"img-responsive picsGall\" src=\"images/prettyPhotoImages/thumb_pic7.jpg\" alt=\"pic1 Gallery\"/>\r\n                    </a>\r\n                    <div class=\"view project_descr \">\r\n                        <h3><a href=\"#\">Darko - Business Card Mock Up</a></h3>\r\n                        <ul>\r\n                            <li><i class=\"fa fa-eye\"></i>440</li>\r\n                            <li><a  class=\"heart\" href=\"#\"><i class=\"fa-heart-o\"></i>35</a></li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"element col-sm-4  gall text_styles\">\r\n                    <a class=\"plS\" href=\"images/prettyPhotoImages/pic8.jpg\" rel=\"prettyPhoto[gallery2]\">\r\n                        <img class=\"img-responsive picsGall\" src=\"images/prettyPhotoImages/thumb_pic8.jpg\" alt=\"pic1 Gallery\"/>\r\n                    </a>\r\n                    <div class=\"view project_descr \">\r\n                        <h3><a href=\"#\">Foil Mini Badges</a></h3>\r\n                        <ul>\r\n                            <li><i class=\"fa fa-eye\"></i>512</li>\r\n                            <li><a  class=\"heart\" href=\"#\"><i class=\"fa-heart-o\"></i>36</a></li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"element col-sm-4  gall polygraphy\">\r\n                    <a class=\"plS\" href=\"images/prettyPhotoImages/pic9.jpg\" rel=\"prettyPhoto[gallery2]\">\r\n                        <img class=\"img-responsive picsGall\" src=\"images/prettyPhotoImages/thumb_pic9.jpg\" alt=\"pic1 Gallery\"/>\r\n                    </a>\r\n                    <div class=\"view project_descr \">\r\n                        <h3><a href=\"#\">Woody Poster Text Effect</a></h3>\r\n                        <ul>\r\n                            <li><i class=\"fa fa-eye\"></i>693</li>\r\n                            <li><a  class=\"heart\" href=\"#\"><i class=\"fa-heart-o\"></i>204</a></li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n\r\n\r\n            <div class=\"col-md-12 cBtn  lb\" style=\"text-align: center;\">\r\n                <ul class=\"load_more_cont \">\r\n                    <li class=\"dowbload btn_load_more\">\r\n                        <a href=\"javascript:void(0);\" >\r\n                            <i class=\"fa fa-arrow-down\"></i>Load More Projects\r\n                        </a>\r\n                    </li>\r\n                    <li class=\"buy\">\r\n                        <a href=\"#\">\r\n                            <i class=\"fa fa-shopping-cart\"></i>Buy on Themeforest\r\n                        </a>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n\r\n        </div>\r\n\r\n        <script type=\"text/javascript\">\r\n            jQuery(window).load(function(){\r\n                items_set = [\r\n\r\n                    {category : 'branding', lika_count : '77', view_count : '234', src : 'images/prettyPhotoImages/pic9.jpg', title : 'Foil Mini Badges', content : '' },\r\n\r\n                    {category : 'polygraphy', lika_count : '45', view_count : '100', src : 'images/prettyPhotoImages/pic7.jpg', title : 'Darko – Business Card Mock Up', content : '' },\r\n\r\n                    {category : 'text_styles', lika_count : '22', view_count : '140', src : 'images/prettyPhotoImages/pic8.jpg', title : 'Woody Poster Text Effect', content : '' }\r\n\r\n\r\n                ];\r\n                jQuery('.portfolio_block').portfolio_addon({\r\n                    type : 1, // 2-4 columns simple portfolio\r\n                    load_count : 3,\r\n\r\n                    items : items_set\r\n                });\r\n                $('#container').isotope({\r\n                    animationOptions: {\r\n                        duration: 900,\r\n                        queue: false\r\n                    }\r\n                });\r\n            });\r\n        </script>\r\n    </div>\r\n</div>"
-
-/***/ },
-/* 92 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(93);
+	__webpack_require__(84);
 	module.exports = angular;
 
 
 /***/ },
-/* 93 */
+/* 84 */
 /***/ function(module, exports) {
 
 	/**
@@ -40256,4 +39861,4 @@ var bundle =
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=index.js.map

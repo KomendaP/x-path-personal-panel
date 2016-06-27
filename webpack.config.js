@@ -5,7 +5,7 @@ module.exports = {
   context: path.resolve(__dirname, 'app'),
   
   entry: {
-    bundle: [
+    index: [
       "webpack-dev-server/client?http://localhost:8080/",
       "webpack/hot/dev-server",
       './index.js'
@@ -13,7 +13,7 @@ module.exports = {
   },
   
   output: {
-    path: path.resolve(__dirname, 'prod/js'),
+    path: path.resolve(__dirname, 'prod'),
     filename: '[name].js',
     library: "[name]" // global variable
   },

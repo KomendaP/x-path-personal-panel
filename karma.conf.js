@@ -5,7 +5,7 @@ var webpackConfig = require('./webpack.config');
 var entry = path.resolve(webpackConfig.context, webpackConfig.entry.bundle[webpackConfig.entry.bundle.length - 1]);
 var preprocessors = {};
 preprocessors[entry] = ['webpack'];
-console.error(entry);
+
 module.exports = function(config) {
   config.set({
 
@@ -71,7 +71,7 @@ module.exports = function(config) {
     concurrency: Infinity,
 
     plugins: [
-      require('karma-webpack'),
+      'karma-webpack',
       'karma-chai',
       'karma-mocha',
       'karma-chrome-launcher'

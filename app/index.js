@@ -1,13 +1,15 @@
-const angular = require('angular');
 
+const angular = require('angular');
+const ngModule = angular.module('app', []);
 // tests
 if (NODE_ENV === 'test'){
   console.log('test');
-  // require('angular-mocks/angular-mocks');
 }
 
-const ngModule = angular.module('app', []);
-
+import controllers from './controllers';
+// import services from './services';
 import directives from './directives';
 
 directives(ngModule);
+controllers(ngModule);
+// services(angular.module('app', []));

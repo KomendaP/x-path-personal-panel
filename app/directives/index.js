@@ -1,9 +1,7 @@
-import home from './home-section';
-import about from './about-section';
-import project from './project-section';
+import mainMenu from './home/mainMenu/mainMenu';
 
-export default ngModule => {
-  home(ngModule);
-  about(ngModule);
-  project(ngModule);
-};
+export default (ngModule) => {
+  "use strict";
+  
+  mainMenu(ngModule);
+}
