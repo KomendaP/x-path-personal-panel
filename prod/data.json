@@ -1,0 +1,25 @@
+{
+  "home": {
+    "cBusiness": {
+      "title": "The Best Way to Create Business Site - Attractive One Page",
+      "descr": "Discover elegant solution for your online business fast, reliable, affordable."
+    },
+    "counters": [
+      {
+        "count": 30,
+        "title": "Awesome Projects",
+        "description": "Dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et lorem a laoreet phasellus ut nisi id leo molestie"
+      },
+      {
+        "count": 50,
+        "title": "Happy Customers",
+        "description": "Dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et lorem a laoreet phasellus ut nisi id leo molestie"
+      },
+      {
+        "count": 150,
+        "title": "Professional Awards",
+        "description": "Dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et lorem a laoreet phasellus ut nisi id leo molestie"
+      }
+    ]
+  }
+}

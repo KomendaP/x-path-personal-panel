@@ -6,4 +6,5 @@ export default (ngModule) => {
   
   MainCtrl(ngModule);
   HomeCtrl(ngModule);
+  console.debug('Controllers connected!')
 }
