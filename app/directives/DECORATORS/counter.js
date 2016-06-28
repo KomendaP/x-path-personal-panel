@@ -16,9 +16,9 @@ export default ngModule => {
     };
     
     return {
-      restrict: 'A',
+      restrict: 'E',
       scope: {
-        myCounter: '='
+        max: '='
       },
       link
     }
