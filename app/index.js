@@ -7,9 +7,9 @@ if (NODE_ENV === 'test'){
 }
 
 import controllers from './controllers';
-// import services from './services';
+import services from './services';
 import directives from './directives';
 
 directives(ngModule);
 controllers(ngModule);
-// services(angular.module('app', []));
+services(ngModule);

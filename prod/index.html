@@ -62,28 +62,14 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4 project">
-					<h3 id="counter">0</h3>
-					<h4>Awesome Projects</h4>
-					<p>Dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et lorem a laoreet phasellus ut nisi id leo molestie. </p>
-				</div>
-				<div class="col-md-4 project">
-					<h3 id="counter1">0</h3>
-					<h4>Happy Customers</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus eget diam et. laoreet phasellus ut nisi id leo.  </p>
-				</div>
-				<div class="col-md-4 project">
-					<h3 id="counter2" style="margin-left: 20px;">0</h3>
-					<h4 style="margin-left: 20px;">Professional Awards</h4>
-					<p>Consectetur adipiscing elit quisque tempus eget diam et laoreet phasellus ut nisi id leo molestie adipiscing vitae a vel. </p>
-				</div>
+				<app-counter></app-counter>
 			</div>
 		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 cBusiness">
-					<h3>The Best Way to Create Business Site &ndash; Attractive One Page</h3>
-					<h4>Discover elegant solution for your online business fast, reliable, affordable.</h4>
+					<h3>{{home.cBusiness.title}}</h3>
+					<h4>{{home.cBusiness.descr}}</h4>
 				</div>
 			</div>
 		</div>
@@ -95,26 +81,13 @@
 			</div>
 		</div>
 	</div>
+
 	<!--about start-->
 	<div id="about">
 		<div class="line2">
 			<div class="container">
 				<div class="row Fresh">
-					<div class="col-md-4 Des">
-						<i class="fa fa-heart"></i>
-						<h4>Fresh & Clean Design</h4>
-						<p>Nulla consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor. feugiat </p>
-					</div>
-					<div class="col-md-4 Ver">
-						<i class="fa fa-cog"></i>
-						<h4>Very Flexible</h4>
-						<p>Nulla consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor. feugiat </p>
-					</div>
-					<div class="col-md-4 Fully">
-						<i class="fa fa-tablet"></i>
-						<h4>Fully Responsive</h4>
-						<p>Nulla consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor. feugiat </p>
-					</div>
+					<app-card></app-card>
 				</div>
 			</div>
 		</div>

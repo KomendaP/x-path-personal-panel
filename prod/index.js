@@ -66,7 +66,7 @@ var index =
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "82c55ebe18dfe551c52c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fb62ac46821e4408c0b3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -8173,24 +8173,26 @@ var index =
 	
 	var _controllers2 = _interopRequireDefault(_controllers);
 	
-	var _directives = __webpack_require__(80);
+	var _services = __webpack_require__(80);
+	
+	var _services2 = _interopRequireDefault(_services);
+	
+	var _directives = __webpack_require__(82);
 	
 	var _directives2 = _interopRequireDefault(_directives);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var angular = __webpack_require__(83);
-	
+	var angular = __webpack_require__(88);
+	var ngModule = angular.module('app', []);
 	// tests
 	if (true) {
 	  console.log('test');
 	}
-	// import services from './services';
 	
-	
-	(0, _controllers2.default)(angular.module('app', []));
-	// services(angular.module('app', []));
-	(0, _directives2.default)(angular.module('app', []));
+	(0, _directives2.default)(ngModule);
+	(0, _controllers2.default)(ngModule);
+	(0, _services2.default)(ngModule);
 
 /***/ },
 /* 77 */
@@ -8217,6 +8219,7 @@ var index =
 	
 	  (0, _MainCtrl2.default)(ngModule);
 	  (0, _HomeCtrl2.default)(ngModule);
+	  console.debug('Controllers connected!');
 	};
 
 /***/ },
@@ -8263,54 +8266,37 @@ var index =
 	  value: true
 	});
 	
-	var _mainMenu = __webpack_require__(81);
+	var _DataSvc = __webpack_require__(81);
 	
-	var _mainMenu2 = _interopRequireDefault(_mainMenu);
+	var _DataSvc2 = _interopRequireDefault(_DataSvc);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = function (ngModule) {
 	  "use strict";
 	
-	  ngModule.directive('mainMenu', function () {
-	    var _this = this;
-	
-	    var ctrl = function ctrl() {
-	      _this.menuItems = [{
-	        link: 'home',
-	        title: 'Home',
-	        active: false
-	      }, {
-	        link: 'about',
-	        title: 'About',
-	        active: false
-	      }, {
-	        link: 'project',
-	        title: 'Projects',
-	        active: false
-	      }, {
-	        link: 'news',
-	        title: 'News',
-	        active: false
-	      }, {
-	        link: 'contact',
-	        title: 'Contact',
-	        active: false
-	      }];
-	    };
-	
-	    return {
-	      restrict: 'E',
-	      scope: {},
-	      template: '<h1>haha</h1>',
-	      controller: ctrl,
-	      controllerAs: 'menu'
-	    };
-	  });
+	  (0, _DataSvc2.default)(ngModule);
+	  console.debug('Services connected!');
 	};
 
 /***/ },
 /* 81 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports.default = function (ngModule) {
+	  "use strict";
+	
+	  ngModule.controller('MainCtrl', function () {});
+	};
+
+/***/ },
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8319,7 +8305,41 @@ var index =
 	  value: true
 	});
 	
-	var _mainMenu = __webpack_require__(82);
+	var _mainMenu = __webpack_require__(83);
+	
+	var _mainMenu2 = _interopRequireDefault(_mainMenu);
+	
+	var _counter = __webpack_require__(85);
+	
+	var _counter2 = _interopRequireDefault(_counter);
+	
+	var _appCounter = __webpack_require__(86);
+	
+	var _appCounter2 = _interopRequireDefault(_appCounter);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (ngModule) {
+	  "use strict";
+	
+	  (0, _mainMenu2.default)(ngModule);
+	  (0, _appCounter2.default)(ngModule);
+	
+	  (0, _counter2.default)(ngModule);
+	  console.debug('Directives connected!');
+	};
+
+/***/ },
+/* 83 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _mainMenu = __webpack_require__(84);
 	
 	var _mainMenu2 = _interopRequireDefault(_mainMenu);
 	
@@ -8331,10 +8351,8 @@ var index =
 	  "use strict";
 	
 	  ngModule.directive('mainMenu', function () {
-	    var _this = this;
-	
 	    var ctrl = function ctrl() {
-	      _this.menuItems = [{
+	      this.menuItems = [{
 	        link: 'home',
 	        title: 'Home',
 	        active: false
@@ -8368,21 +8386,117 @@ var index =
 	};
 
 /***/ },
-/* 82 */
+/* 84 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"navmenu\" ng-repeat=\"item in menu.menuItems\" style=\"text-align: center;\">\r\n\t<ul id=\"menu\">\r\n\t\t<li ng-class=\"{active: item.active}\" ><a href=\"#{{item.link}}\">{{item.title}}</a></li>\r\n\t</ul>\r\n</div>"
+	module.exports = "<div class=\"navmenu\" ng-repeat=\"item in menu.menuItems\" style=\"text-align: center;\">\r\n\t<ul id=\"menu\">\r\n\t\t<li ><a href=\"#{{item.link}}\">{{item.title}}</a></li>\r\n\t</ul>\r\n</div>"
 
 /***/ },
-/* 83 */
+/* 85 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports.default = function (ngModule) {
+	  "use strict";
+	
+	  ngModule.directive('myCounter', function ($timeout) {
+	    var link = function link(scope, el, attrs) {
+	      debugger;
+	      var counter = 0;
+	      var updateCounter = function updateCounter() {
+	        counter++;
+	        $timeout(updateCounter, 100);
+	        scope.item.count = counter;
+	      };
+	      updateCounter();
+	    };
+	
+	    return {
+	      restrict: 'A',
+	      scope: {
+	        myCounter: '='
+	      },
+	      link: link
+	    };
+	  });
+	};
+
+/***/ },
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(84);
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _appCounter = __webpack_require__(87);
+	
+	var _appCounter2 = _interopRequireDefault(_appCounter);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// import styles from './appCounter.scss';
+	
+	exports.default = function (ngModule) {
+	  "use strict";
+	
+	  ngModule.directive('appCounter', function () {
+	    var ctrl = function ctrl($scope, $timeout) {
+	      $scope.counters = [{
+	        count: 3,
+	        title: 'Awesome Projects',
+	        description: 'Dolor sit amet, consectetur\n                        adipiscing elit quisque tempus eget diam\n                        et lorem a laoreet phasellus ut nisi\n                        id leo molestie'
+	      }, {
+	        count: 5,
+	        title: 'Happy Customers',
+	        description: 'Dolor sit amet, consectetur\n                        adipiscing elit quisque tempus eget diam\n                        et lorem a laoreet phasellus ut nisi\n                        id leo molestie'
+	      }, {
+	        count: 15,
+	        title: 'Professional Awards',
+	        description: 'Dolor sit amet, consectetur\n                        adipiscing elit quisque tempus eget diam\n                        et lorem a laoreet phasellus ut nisi\n                        id leo molestie'
+	      }];
+	      var counter = 0;
+	      var updateCounter = function updateCounter(val) {
+	        if (counter < val) {
+	          counter++;
+	          $timeout(updateCounter, 100);
+	        }
+	        return counter;
+	      };
+	      updateCounter(50);
+	    };
+	
+	    return {
+	      restrict: 'E',
+	      template: _appCounter2.default,
+	      controller: ctrl
+	    };
+	  });
+	};
+
+/***/ },
+/* 87 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"col-md-4 project\" ng-repeat=\"item in counters\">\r\n\t<h3 my-counter=\"500\" >{{item.count}}</h3>\r\n\t<h4>{{item.title}}</h4>\r\n\t<p>{{item.description}}</p>\r\n</div>"
+
+/***/ },
+/* 88 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(89);
 	module.exports = angular;
 
 
 /***/ },
-/* 84 */
+/* 89 */
 /***/ function(module, exports) {
 
 	/**
