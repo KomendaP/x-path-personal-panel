@@ -1,12 +1,5 @@
 <div class="col-md-4 project" ng-repeat="item in counters">
-	<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150"
-	     style="border: 1px solid black">
-		<path d="{{background}}"
-		      stroke-width="10"
-		      stroke="black"
-		      fill="none"/>
-	</svg>
-	<h3 my-counter="item.count" >{{item.initial}}</h3>
+	<my-counter max="item.count"></my-counter>
 	<h4>{{item.title}}</h4>
 	<p>{{item.description}}</p>
 </div>
