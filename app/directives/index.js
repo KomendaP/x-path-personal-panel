@@ -1,5 +1,5 @@
 import mainMenu from './home/mainMenu/mainMenu';
-import counterDecorator from './DECORATORS/counter';
+import counterDecorator from './DECORATORS/counter/counter';
 import counter from './home/counter/appCounter';
 import card from './about/card/appCard';
 
